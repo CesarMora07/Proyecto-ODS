@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciudades Sostenibles</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+
+    <!-- el loader-->
+    <div id="loader">
+        <div class="contenedor-loader">
+            <div class="cargando"></div>
+            <span class="arbol-centro">🌳</span>
+        </div>
+        <p>Cargando Ciudad Sostenible...</p>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="#problema">Problema</a></li>
+            <li><a href="#solucion">Solución</a></li>
+            <li><a href="#beneficios">Beneficios</a></li>
+            <li><a href="#contacto">Contáctanos</a></li>
+        </ul>
+    </nav>
+
+    <!--hero section-->
+    <div class="imagen">
+        <img src="img/ciudad_sostenible.png" alt="Ciudad Sostenible">
+        <h1>Una ciudad mejor no se construye con cemento, sino con conciencia.</h1>
+    </div>
+
+    <!--problema-->
+    <section id="problema" class="seccion">
+        <h2>El Problema</h2>
+        <div class="recuadro-problema">
+            <p>Actualmente las ciudades del Ecuador enfrentan tres grandes desafíos que afectan la calidad de vida y el medio ambiente:</p>
+            <ul>
+                <li><strong>Falta de basureros:</strong> Desechos acumulados en las calles y veredas por escasez de puntos de depósito adecuados.</li>
+                <li><strong>Poca cultura de reciclaje:</strong> Mezcla de residuos aprovechables con basura común por falta de información e incentivos.</li>
+                <li><strong>Falta de energías alternativas:</strong> Dependencia casi total de las hidroeléctricas y desperdicio de la energía solar disponible en el entorno urbano.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!--solucion tecnologica-->
+    <section id="solucion" class="seccion">
+        <h2>Solución Tecnológica</h2>
+        <div class="contenedor-tarjetas">
+            
+            <!--tarjeta 1-->
+            <div class="tarjeta">
+                <img src="img/mapalimpio.jpg" alt="Mapa Limpio">
+                <h3>Mapa Limpio</h3>
+                <p>Implementacion de mas basureros y una app con un mapa que muestre todos los basureros cercanos al usuario</p>
+                <div class="detalle-oculto" id="caja1">
+                    <p>Al abrir el mapa se detecta la ubicacion en tiempo real de la persona y se muestran iconos de basureros en un diametro de 120</p>
+                </div>
+                <button class="btn-detalles" id="boton1">Ver detalles</button>
+            </div>
+
+            <!--tarjeta 2-->
+            <div class="tarjeta">
+                <img src="img/pagina_web.png" alt="Pagina de reciclaje">
+                <h3>Plataforma de Reciclaje</h3>
+                <p>Pagina web para ubicar puntos verdes y fomentar la separación de residuos.</p>
+                <div class="detalle-oculto" id="caja2">
+                    <p>Permite a los ciudadanos encontrar contenedores cercanos para desechos de organicos, plástico, cartón y vidrio, sumando puntos canjeables por beneficios locales.</p>
+                </div>
+                <button class="btn-detalles" id="boton2">Ver detalles</button>
+            </div>
+
+            <!--tarjeta 3-->
+            <div class="tarjeta">
+                <img src="img/paneles.jpg" alt="Paneles solares">
+                <h3>Red de Paneles Solares</h3>
+                <p>Energía limpia y alternativa para reducir la dependencia eléctrica en hogares y comercios de la ciudad.</p>
+                <div class="detalle-oculto" id="caja3">
+                    <p>Implementación de paneles solares monitoreados desde nuestra página para medir en tiempo real la energía limpia generada y evitar sobrecargar la red en épocas de sequía.</p>
+                </div>
+                <button class="btn-detalles" id="boton3">Ver detalles</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!--beneficios-->
+    <section id="beneficios" class="seccion">
+        <h2>Beneficios</h2>
+        <div class="contenedor-tarjetas">
+            <div class="tarjeta beneficio">
+                <h3>-50% de Basura</h3>
+                <div class="barra-fondo">
+                    <div class="barra-progreso barra-50">-50%</div>
+                </div>
+                <p>Calles más limpias y sin malos olores, beneficiando directamente a los habitantes del barrio.</p>
+            </div>
+
+            <div class="tarjeta beneficio">
+                <h3>+60% de Reciclaje</h3>
+                <div class="barra-fondo">
+                    <div class="barra-progreso barra-60">+60%</div>
+                </div>
+                <p>Mayor aprovechamiento de materiales y apoyo directo al trabajo de los recicladores locales.</p>
+            </div>
+
+            <div class="tarjeta beneficio">
+                <h3>-40% Consumo Eléctrico</h3>
+                <div class="barra-fondo">
+                    <div class="barra-progreso barra-40">-40%</div>
+                </div>
+                <p>Ahorro energético y menor dependencia de la red tradicional gracias al uso de energía solar limpia en toda la ciudad.</p>
+            </div>
+        </div>
+    </section>
+
+    <!--tecnologias utilizadas-->
+    <section id="tecnologias" class="seccion">
+        <h2>Tecnologías Utilizadas</h2>
+        <div class="contenedor-tec">
+            <span class="etiqueta-tec">HTML5</span>
+            <span class="etiqueta-tec">CSS3</span>
+            <span class="etiqueta-tec">JavaScript</span>
+        </div>
+    </section>
+
+    <!--contactos-->
+    <footer id="contacto" class="cta">
+        <h2>¿Quieres implementar esta solución en tu comunidad?</h2>
+        <p>Escríbenos directamente y hagamos juntos una ciudad más sostenible.</p>
+        <a href="https://wa.me/593939770192?text=Hola,%20me%20interesa%20el%20proyecto%20de%20Ciudades%20Sostenibles" target="_blank" class="btn-whatsapp">
+            Contáctanos por WhatsApp
+        </a>
+    </footer>
+
+</body>
+</html>

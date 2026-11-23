@@ -1,0 +1,360 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: rgb(227, 223, 217);
+    color: #333;
+}
+
+
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(227, 223, 217);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+    transition: opacity 0.5s ease;
+}
+
+#loader.oculto {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.contenedor-loader {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.cargando {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 6px solid rgba(62, 168, 62, 0.25);
+    border-top: 6px solid rgb(62, 168, 62);
+    border-radius: 50%;
+    animation: girar 1s linear infinite;
+}
+
+.arbol-centro {
+    font-size: 40px;
+}
+
+#loader p {
+    color: rgb(38, 115, 38);
+    font-size: 18px;
+    font-weight: bold;
+}
+
+@keyframes girar {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/*barra de navegacion*/
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Asegura que el menú siempre quede por encima de las tarjetas e imágenes */
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-around;
+    background: rgb(62, 168, 62);
+    padding: 25px 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #d4f7d4;
+}
+
+/* hero section*/
+.imagen {
+    position: relative;
+    width: 100%;
+    height: 600px;
+}
+
+.imagen img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    display: block;
+    filter: brightness(75%);
+}
+
+.imagen h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    width: 80%;
+    max-width: 750px;
+    padding: 25px;
+    border-radius: 15px;
+    background-color: rgba(20, 60, 20, 0.65);
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+    animation: aparecer 1.2s ease-out;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -35%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* estilos generales de secciones*/
+.seccion {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.seccion h2 {
+    text-align: center;
+    font-size: 30px;
+    color: rgb(38, 115, 38);
+    margin-bottom: 25px;
+}
+
+/*seccion problema*/
+.recuadro-problema {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    border-left: 8px solid rgb(62, 168, 62);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.recuadro-problema ul {
+    margin-top: 15px;
+    margin-left: 25px;
+}
+
+.recuadro-problema li {
+    margin-bottom: 10px;
+}
+
+/*contenedor de tarjetas(solucion y beneficios */
+.contenedor-tarjetas {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.tarjeta {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    flex: 1;
+    min-width: 280px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* todas las tarjetas se levantan al pasar el cursor*/
+.tarjeta:hover {
+    transform: translateY(-8px);
+}
+
+/* sombra verde en las tarjetas de Beneficios*/
+.beneficio:hover {
+    box-shadow: 0 10px 25px rgba(50, 220, 90, 0.6);
+}
+
+.tarjeta img {
+    width: 270px;
+    height: 270px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.tarjeta h3 {
+    color: rgb(38, 115, 38);
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+.tarjeta p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* detalles ocultos y boton en solucion */
+.detalle-oculto {
+    display: none;
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+    color: #555;
+    font-size: 15px;
+}
+
+.detalle-oculto.activo {
+    display: block;
+}
+
+.btn-detalles {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: rgb(62, 168, 62);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-detalles:hover {
+    background-color: rgb(42, 130, 42);
+}
+
+/*tarjetas de beneficios y barras de porcentaje suben al hacer hover)*/
+.beneficio {
+    border-top: 6px solid rgb(62, 168, 62);
+}
+
+.barra-fondo {
+    width: 100%;
+    height: 24px;
+    background-color: #e0e0e0;
+    border-radius: 12px;
+    margin: 15px 0;
+    overflow: hidden;
+}
+
+.barra-progreso {
+    width: 0; 
+    height: 100%;
+    background-color: rgb(62, 168, 62);
+    color: transparent; /* Oculta el número mientras está en 0 */
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 24px;
+    text-align: right;
+    border-radius: 12px;
+    transition: width 1s ease-out, color 0.3s ease;
+}
+
+/*al pasar el cursor por la tarjeta de beneficio la barra se llena */
+.beneficio:hover .barra-progreso {
+    color: white;
+    padding-right: 10px;
+}
+
+.beneficio:hover .barra-50 {
+    width: 50%;
+}
+
+.beneficio:hover .barra-60 {
+    width: 60%;
+}
+
+.beneficio:hover .barra-40 {
+    width: 40%;
+}
+
+/* tecnologias tilizadas*/
+.contenedor-tec {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.etiqueta-tec {
+    background-color: rgb(38, 115, 38);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: transform 0.3s;
+}
+
+.etiqueta-tec:hover {
+    transform: scale(1.1);
+}
+
+/* contactos*/
+.cta {
+    background-color: rgb(38, 115, 38);
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    margin-top: 60px;
+}
+
+.cta h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.cta p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.btn-whatsapp {
+    display: inline-block;
+    background-color: #25D366;
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    animation: pulso 2s infinite;
+}
+
+@keyframes pulso {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.06); }
+    100% { transform: scale(1); }
+}
